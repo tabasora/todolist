@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository
 @Repository
 class InMemoryTaskRepository : TaskRepository {
     private val tasks: MutableList<Task> = mutableListOf()
+    
 
     private val maxId: Long
         get() = tasks.map(Task::id).maxOrNull() ?: 0
